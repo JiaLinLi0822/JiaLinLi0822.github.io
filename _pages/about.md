@@ -13,7 +13,7 @@ Hi, My name is Jialin Li. I just graduated with an B.S. in Psychology from [Scho
 
 **The Description-Experience Gap in Exploration-Exploitation tradeoff** [October 2023 - Present]
 
-*Researcher* | *Advisor: [Prof. Jian Li](https://www.psy.pku.edu.cn/english/people/faculty/professor/jianli/index.htm), School of Psychological and Cognitive Sciences, Peking University*
+*Researcher*, *Advisor: [Prof. Jian Li](https://www.psy.pku.edu.cn/english/people/faculty/professor/jianli/index.htm), School of Psychological and Cognitive Sciences, Peking University*
 
 * Based on Kahneman Prospect theory, human will exhibit different probability distortion and asymmetry of utility function in description and experience context, which called description-experience gap.
 
@@ -23,13 +23,13 @@ Hi, My name is Jialin Li. I just graduated with an B.S. in Psychology from [Scho
 
 **Psychological Statistics** [Sep. 2023 - Dec 2023]
 
-*Teaching Assistant* | *Instructor: Prof. Jian Li, School of Psychological and Cognitive Sciences, Peking University*
+*Teaching Assistant*, *Instructor: Prof. Jian Li, School of Psychological and Cognitive Sciences, Peking University*
 
 * Lead weekly recitations and practive about statistical inference with R, proctor exams, grade assignments, and hold office hours(Course Materials could be found [here](https://github.com/JiaLinLi0822/Psychological_Statistics_I_Materials.git)).
 
 ## Professional Experience
 
-**[Twirling](https://www.twirlingai.com)**[Jan. 2024 – May 2024]
+**[Twirling](https://www.twirlingai.com)** [Jan. 2024 – May 2024]
 
 *Programming Technician Internship*
 
