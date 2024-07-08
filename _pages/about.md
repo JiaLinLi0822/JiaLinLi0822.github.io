@@ -1,4 +1,11 @@
-# Welcome!
+---
+permalink: /
+title: "Welcome!"
+author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
+---
 
 Hi, My name is Jialin Li. I just graduated with an B.S. in Psychology from [School of Psychological and Cognitive Sciences](https://www.psy.pku.edu.cn) at [Peking University](https://www.pku.edu.cn/) this July 2024. I'm an upcoming master student at [New York University](https://www.nyu.edu) this September 2024. My research interest lies in using the architecture of reinforcement learning theory to understand how human represent the environment dynamically and how memory contribute to the decision making.
 
