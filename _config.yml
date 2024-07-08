@@ -12,7 +12,7 @@ title                    : "Jialin Li"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://jialinli0822.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "https://jialinli0822.github.io"
 
@@ -22,21 +22,21 @@ repository               : "https://jialinli0822.github.io"
 author:
   # Biographic information
   avatar           : "selfie.png"
-  name             : "Jialin Li"
-  pronouns         : # example: "he/his"  
+  name             : "Jialin Li(李佳霖)"
+  pronouns         : "he/his/him"  
   bio              : "Try to be a neuroscientist, psychologist and musician"
   location         : "Beijing, China"
   employer         : "Peking University"
-  uri              : # URL
+  uri              : "https://jialinli0822.github.io"
   email            : "ljl2282002@gmail.com" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
   impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : # "http://orcid.org/yourorcidurl"
   semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
 
   # Repositories and software development
