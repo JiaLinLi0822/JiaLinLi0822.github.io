@@ -42,6 +42,8 @@ A.Matrix
 </a>
 </p>
 
+<br>
+
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
 <a style="font-size:1.3em" class="blog">
 Useful Resources
@@ -49,7 +51,7 @@ Useful Resources
 </p>
 
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
-<a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/Markdown_Lookup_Table.pdf">
+<a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/Markdown_Lookup_Table.html">
 Markdown Lookup Table
 </a>
 </p>
