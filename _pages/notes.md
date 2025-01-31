@@ -37,7 +37,7 @@ Mathematical Foundation of Machine Learning
 Including basic mathematical knowledge in Machine Learning
 
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
-<a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/A_Matrix.pdf">
+<a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/A_Matrix.html">
 A.Matrix
 </a>
 </p>
@@ -46,10 +46,14 @@ A.Matrix
 
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
 <a style="font-size:1.3em" class="blog">
-Useful Resources
+Programming
 </a>
 </p>
-
+<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
+<a style="font-size:1.0em" class="blog" href="https://r4ds.hadley.nz">
+R for Data Science
+</a>
+</p>
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
 <a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/Markdown_Lookup_Table.html">
 Markdown Lookup Table
@@ -60,6 +64,32 @@ Markdown Lookup Table
 LaTex Manual
 </a>
 </p>
+
+<br>
+
+<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
+<a style="font-size:1.3em" class="blog">
+Neuroscience
+</a>
+</p>
+<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
+<a style="font-size:1.0em" class="blog" href="https://deeplearning.neuromatch.io/tutorials/intro.html#">
+Neuromatch
+</a>
+</p>
+<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
+<a style="font-size:1.0em" class="blog" href="https://arxiv.org/html/2311.07315v3">
+An Introduction of reinforcement learning for neuroscience
+</a>
+</p>
+<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
+<a style="font-size:1.0em" class="blog" href="https://mrgreene09.github.io/computational-neuroscience-textbook/">
+Computational Neuroscience
+</a>
+</p>
+
+
+
 
 
 
