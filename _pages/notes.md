@@ -23,23 +23,22 @@ a.blog:visited {
   text-decoration: underline;
   font-weight:bold;
 }
-</style>
-</head>
 
-<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
-<a style="font-size:1.3em" class="blog">
-Mathematical Foundation of Machine Learning
-</a>
-</p>
+## Mathematical Foundation of Machine Learning
 
-{: style="text-align: justify" }
+{: style="text-align: justify;"}
 Including some basic mathematical knowledge in Machine Learning
 
-<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
-<a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/A_Matrix.pdf">
-A.Matrix
-</a>
-</p>
+[A.Matrix](http://JiaLinLi0822.github.io/files/notes/A_Matrix.pdf){: style="font-size:1.0em;" }
+
+## Markdown
+
+{: style="text-align: justify;"}
+LATEX and Markdown Syntax
+
+[Lookup Table](http://JiaLinLi0822.github.io/files/notes/Markdown_Lookup_Table.pdf){: style="font-size:1.0em;" }
+[Manual](https://www.cnblogs.com/1024th/p/11623258.html){: style="font-size:1.0em;" }
+
 
 
 
