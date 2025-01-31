@@ -57,7 +57,7 @@ Markdown Lookup Table
 </p>
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
 <a style="font-size:1.0em" class="blog" href="https://www.cnblogs.com/1024th/p/11623258.html">
-Latex Manual
+LaTex Manual
 </a>
 </p>
 
