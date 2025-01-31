@@ -24,20 +24,44 @@ a.blog:visited {
   font-weight:bold;
 }
 
-## Mathematical Foundation of Machine Learning
+</style>
+</head>
 
-{: style="text-align: justify;"}
-Including some basic mathematical knowledge in Machine Learning
+<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
+<a style="font-size:1.3em" class="blog">
+Mathematical Foundation of Machine Learning
+</a>
+</p>
 
-[A.Matrix](http://JiaLinLi0822.github.io/files/notes/A_Matrix.pdf){: style="font-size:1.0em;" }
+{: style="text-align: justify" }
+Including basic mathematical knowledge in Machine Learning
 
-## Markdown
+<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
+<a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/A_Matrix.pdf">
+A.Matrix
+</a>
+</p>
 
-{: style="text-align: justify;"}
-LATEX and Markdown Syntax
+</style>
+</head>
 
-[Lookup Table](http://JiaLinLi0822.github.io/files/notes/Markdown_Lookup_Table.pdf){: style="font-size:1.0em;" }
-[Manual](https://www.cnblogs.com/1024th/p/11623258.html){: style="font-size:1.0em;" }
+<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
+<a style="font-size:1.3em" class="blog">
+Useful Resources
+</a>
+</p>
+
+<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
+<a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/Markdown_Lookup_Table.pdf">
+Markdown Lookup Table
+</a>
+</p>
+<p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
+<a style="font-size:1.0em" class="blog" href="https://www.cnblogs.com/1024th/p/11623258.html">
+Latex Manual
+</a>
+</p>
+
 
 
 
