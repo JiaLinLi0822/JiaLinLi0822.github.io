@@ -42,9 +42,6 @@ A.Matrix
 </a>
 </p>
 
-</style>
-</head>
-
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
 <a style="font-size:1.3em" class="blog">
 Useful Resources
