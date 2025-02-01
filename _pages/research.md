@@ -26,6 +26,12 @@ a.rec:visited {
 
 {% include base_path %}
 
+## Context-dependent exploration-exploitation behavior
+
+With the accumulation of behavior evidence against standard normative expected utility theory, many researchers have identified that human's decision making under risk and uncertainty shows features like bounded rationality([Lieder & Griffith, 2020](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/resourcerational-analysis-understanding-human-cognition-as-the-optimal-use-of-limited-computational-resources/586866D9AD1D1EA7A1EECE217D392F4A)), heuristics([Gigerenzer & Gaissmaier, 2011](https://www.annualreviews.org/content/journals/10.1146/annurev-psych-120709-145346)) and cogntivie bias([Tversky & Kahneman, 1979]([**Prospect theory**: An **analysis** of **decision under risk**](http://hassler-j.iies.su.se/COURSES/NewPrefs/Papers/KahnemanTversky Ec 79.pdf))). However, these phenomena are established within descriptive context, where information relevant to choices is presented symbolically to human. Indeed, many research also show that human exhibit different decision making behaviors, which is deviated from normative theory but also different from decision under descriptive context — a phenomenon termed description-experience gap([Hertwig & Erev, 2009](https://www.cell.com/ajhg/abstract/S1364-6613(09)00212-5)). However, little is known about whether human can also exhibit context-dependent behavior under the scenario where they are required to make sequential decision-making, which is relevant to higher cognitive function like planning([Mattar & Lengyel, 2022](https://www.cell.com/neuron/fulltext/S0896-6273(21)01035-7)). To address this issue, here we adopted and redesigned a minimalistic exploration-exploitation task to investigate human's context-dependent exploraion-exploitation behavior([Song et al., 2019](https://www.nature.com/articles/s41562-018-0526-x)). Online demo can be found [here](../files/Demo).
+
+
+
 ## An attractor model of planning in PFC
 
 {: style="text-align: justify" }

@@ -35,7 +35,6 @@ Mathematical Foundation of Machine Learning
 
 {: style="text-align: justify" }
 Including basic mathematical knowledge in Machine Learning
-
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
 <a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/A_Matrix.html">
 A.Matrix
