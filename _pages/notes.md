@@ -42,7 +42,7 @@ A.Matrix
 </p>
 
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
-<a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/Information_Theory_Basics.html">
+<a style="font-size:1.0em" class="blog" href="http://JiaLinLi0822.github.io/files/notes/Information_Theory_Basic.html">
 Information Theory Basics
 </a>
 </p>
