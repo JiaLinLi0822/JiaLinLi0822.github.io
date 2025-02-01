@@ -39,6 +39,6 @@ With the accumulation of behavior evidence against standard normative expected u
 Humans can rapidly adapt to new information and flexibly change their behavior in dynamic environments. It has previously been suggested that this flexibility is facilitated by fast network dynamics in the prefrontal network, acquired through a process of ‘meta-reinforcement learning’([Wang et al., 2018](https://www.nature.com/articles/s41593-018-0147-8)). However, human behaviour is highly constrained by their limited computational resources and memory capacity. An innovative idea is that human can make decision by sampling from their past memory and experience([Stewart et al., 2006](https://www.sciencedirect.com/science/article/pii/S0010028505001015?casa_token=zZudmb-aAa8AAAAA:k0NCaJuF3w8iLhhE8Ou8PoF9Q0MxXVr37A1qpe_kF6xXjRPbGURJu2n_0-GgporWNY3hBIDs)), which can explain numerous decision-making phenomena from psychology and neuroeconomics fields. Here we implement an meta-RL agent with the capability to learn this type of sampling behavior and investigate how such sampling behaviors can help reinforcement learning agents adapt to new environments. <a class="rec" href="https://github.com/JiaLinLi0822/Decision-by-sampling-Meta-RL">Code</a><br>
 
 <div style="text-align: center;">
-  <img src="https://jialinli0822.github.io/files/research/RNN-DbS.png" alt="RNN_DbS" style="zoom: 33%;" />
+  <img src="https://jialinli0822.github.io/files/research/RNN-DbS.png" alt="RNN-DbS" style="zoom: 33%;" />
 </div>
 
