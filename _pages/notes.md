@@ -66,7 +66,7 @@ Markdown Lookup Table
 </p>
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
 <a style="font-size:1.0em" class="blog" href="https://www.cnblogs.com/1024th/p/11623258.html">
-LaTex Manual
+LaTeX Manual
 </a>
 </p>
 
@@ -84,7 +84,7 @@ Neuromatch
 </p>
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
 <a style="font-size:1.0em" class="blog" href="https://arxiv.org/html/2311.07315v3">
-An Introduction of reinforcement learning for neuroscience
+An Introduction to reinforcement learning for neuroscience
 </a>
 </p>
 <p style="padding-bottom:-12px; margin-bottom:-12px; padding-top:8px; margin-top:8px">
