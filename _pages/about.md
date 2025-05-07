@@ -12,6 +12,7 @@ Hi, I'm a master student at [New York University](https://www.nyu.edu). Currentl
 My research interest lies in using the architecture of reinforcement learning theory to understand neural and computational mechanism of human adaptive behavior and decision-making. Human’s decision are shaped by their preceding experience due to limited memory capacity and restrained computational resources. However, human also exhibits superior learning and generalization ability with just a few experience. From the perspective of efficient coding, there must be some potential mechanism and advantages for human as an organism to own this capacity compared to AI. Thus, I try to reveal the neural and computational mechanism of human flexible decision making and learning process by combining the architecture of reinforcement learning and other mathematical approaches.
 
 My research skills include:
-- **Code**: Python (Proficient), R (Proficient), MATLAB (Proficient), LATEX (Proficient), Julia (Elementary), JavaScript/CSS/HTML (Intermediate)
-- **Data Collection**: Behavior (Psychtoolbox/Psychpy/jsPsych), Eye-tracking (EyeLink), EEG (BrainVision)
+- **Coding**: Python (Proficient), R (Proficient), MATLAB (Proficient), LaTeX (Proficient), Julia (Elementary), JavaScript/CSS/HTML (Intermediate)
+- **Data Collection**: Behavior (Psychtoolbox | Psychpy | jsPsych), Eye-tracking (EyeLink), EEG (BrainVision)
 - **Computational**: Reinforcement learning (Gym), Hierarchy Bayesian Inference (Pymc), Artificial Neural Network (Pytorch, Tensorflow)
+- **Command line**: Git, Bash, Vim
