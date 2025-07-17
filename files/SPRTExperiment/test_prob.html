@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Probability Test</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      .container { max-width: 800px; }
+      table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+      th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+      th { background-color: #f2f2f2; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>SPRT Probability Distribution Test</h2>
+      <div id="results"></div>
+      <button onclick="testSampling()">Test Sampling (1000 samples)</button>
+      <div id="sampling-results"></div>
+    </div>
+
+    <script>
+      // Same probability calculation as in the main experiment
+      function linspace(start, end, num) {
+        const step = (end - start) / (num - 1);
+        return Array.from({length: num}, (_, i) => start + step * i);
+      }
+      
+      function calculateDistributions() {
+        const ell = linspace(-0.9, 0.9, 16);
+        const lam = 3.0;
+        const w = ell.map(e => Math.pow(10, e/2) * Math.exp(-lam * Math.abs(e)));
+        const w_sum = w.reduce((sum, val) => sum + val, 0);
+        const pA = w.map(val => val / w_sum);
+        const pB = [...pA].reverse();
+        const logLR_values = pA.map((pa, i) => Math.log10(pa / pB[i]));
+        
+        return { ell, pA, pB, logLR_values };
+      }
+
+      function sampleStimulus(targetType, distributions) {
+        const probDist = targetType === 'A' ? distributions.pA : distributions.pB;
+        const cumProb = [];
+        let sum = 0;
+        for (let i = 0; i < probDist.length; i++) {
+          sum += probDist[i];
+          cumProb.push(sum);
+        }
+        
+        const rand = Math.random();
+        for (let i = 0; i < cumProb.length; i++) {
+          if (rand <= cumProb[i]) {
+            return i;
+          }
+        }
+        return cumProb.length - 1;
+      }
+
+      // Display results
+      const distributions = calculateDistributions();
+      
+      let html = '<h3>Calculated Distributions</h3>';
+      html += '<table>';
+      html += '<tr><th>Image</th><th>ell</th><th>pA</th><th>pB</th><th>logLR</th></tr>';
+      
+      for (let i = 0; i < 16; i++) {
+        html += `<tr>
+          <td>image${i+1}</td>
+          <td>${distributions.ell[i].toFixed(3)}</td>
+          <td>${distributions.pA[i].toFixed(4)}</td>
+          <td>${distributions.pB[i].toFixed(4)}</td>
+          <td>${distributions.logLR_values[i].toFixed(3)}</td>
+        </tr>`;
+      }
+      
+      html += '</table>';
+      html += `<p>Sum pA: ${distributions.pA.reduce((s,v) => s+v, 0).toFixed(4)}</p>`;
+      html += `<p>Sum pB: ${distributions.pB.reduce((s,v) => s+v, 0).toFixed(4)}</p>`;
+      
+      document.getElementById('results').innerHTML = html;
+
+      function testSampling() {
+        const nSamples = 1000;
+        const countsA = new Array(16).fill(0);
+        const countsB = new Array(16).fill(0);
+        
+        // Sample from distribution A
+        for (let i = 0; i < nSamples; i++) {
+          const idx = sampleStimulus('A', distributions);
+          countsA[idx]++;
+        }
+        
+        // Sample from distribution B
+        for (let i = 0; i < nSamples; i++) {
+          const idx = sampleStimulus('B', distributions);
+          countsB[idx]++;
+        }
+        
+        let html = '<h3>Sampling Test Results</h3>';
+        html += '<table>';
+        html += '<tr><th>Image</th><th>Expected pA</th><th>Observed A</th><th>Expected pB</th><th>Observed B</th></tr>';
+        
+        for (let i = 0; i < 16; i++) {
+          html += `<tr>
+            <td>image${i+1}</td>
+            <td>${distributions.pA[i].toFixed(4)}</td>
+            <td>${(countsA[i]/nSamples).toFixed(4)}</td>
+            <td>${distributions.pB[i].toFixed(4)}</td>
+            <td>${(countsB[i]/nSamples).toFixed(4)}</td>
+          </tr>`;
+        }
+        
+        html += '</table>';
+        document.getElementById('sampling-results').innerHTML = html;
+      }
+    </script>
+  </body>
+</html> 
