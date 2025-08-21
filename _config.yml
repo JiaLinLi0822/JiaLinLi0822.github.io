@@ -22,7 +22,9 @@ repository               : "https://jialinli0822.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Jialin Li(李佳霖)"
+  name             : "Jialin Li"
+  pronunciation    : "Jya-lin Lee"
+  name_chinese     : "李佳霖"
   pronouns         : "he/him/his" 
   bio              : "A neuroscientist, psychologist and musician on his way"
   location         : "New York, USA"
