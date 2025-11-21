@@ -6,7 +6,7 @@ layout: default
 
 <section id="about" class="hero">
     <div class="hero-content">
-        <h1>{{ site.author.name | default: site.name }}</h1>
+        <h1>{{ site.author.name | default: site.title }}</h1>
         <div class="hero-subtitle">
             Master's Student at <a href="https://www.nyu.edu">NYU</a> | Neuroscience & AI
         </div>

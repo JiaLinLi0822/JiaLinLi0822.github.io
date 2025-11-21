@@ -9,7 +9,7 @@ layout: compress
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name | default: site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: site.author.name }}</title>
     
     {% include seo.html %}
     
