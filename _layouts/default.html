@@ -1,44 +1,45 @@
 ---
 layout: compress
 ---
-
-{% include base_path %}
-
 <!DOCTYPE html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: site.author.name }}</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name | default: site.title }}</title>
     
     {% include seo.html %}
     
-    <!-- Google Fonts - Inter and Lora -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom styles matching index.html -->
-    <link rel="stylesheet" href="{{ base_path }}/assets/css/index-style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/academic-style.css">
     
     {% include head/custom.html %}
-    
-    <script>
-        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-    </script>
 </head>
 <body>
-    {% include browser-upgrade.html %}
-    
+
     <div class="container">
-        {% include nav.html %}
         
+        <nav>
+            <div class="nav-brand">{{ site.name | default: "Jialin Li" }}</div>
+            <div class="nav-links">
+                <a href="{{ site.baseurl }}/#about">About</a>
+                <a href="{{ site.baseurl }}/#research">Research</a>
+                <a href="{{ site.baseurl }}/#cv">CV</a>
+                <a href="https://github.com/JiaLinLi0822" target="_blank">Code</a>
+            </div>
+        </nav>
+
         {{ content }}
         
-        {% include footer.html %}
+        <footer>
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.name | default: "Jialin Li" }}. Built with minimal HTML/CSS.</p>
+        </footer>
+
     </div>
     
     {% include scripts.html %}
