@@ -11,20 +11,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- 这里是样式表，控制网页长什么样 --- */
+        /* Style Sheet for the website */
         :root {
-            --primary: #57068c;   /* 主色调：NYU紫 */
-            --secondary: #1e293b; /* 深色文字 */
-            --accent: #0ea5e9;    /* 链接悬停色：天蓝 */
-            --bg: #ffffff;        /* 背景色 */
-            --bg-alt: #f8fafc;    /* 浅灰背景（用于卡片/标签） */
+            --primary: #57068c;   /* Main color: NYU Purple */
+            --secondary: #1e293b; /* Dark text color */
+            --accent: #0ea5e9;    /* Link hover color: Sky blue */
+            --bg: #ffffff;        /* Background color */
+            --bg-alt: #f8fafc;    /* Light gray background (for cards/tags) */
             --text-main: #334155;
             --text-light: #64748b;
             --border: #e2e8f0;
-            --max-width: 900px;   /* 网页最大宽度 */
+            --max-width: 900px;   /* Maximum width of the website */
         }
 
-        /* 基础重置 */
+        /* Basic Reset */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Lora', serif; 
@@ -38,13 +38,13 @@
         a { text-decoration: none; color: var(--primary); transition: 0.2s; }
         a:hover { color: var(--accent); }
         
-        /* 布局容器 */
+        /* Container Section */
         .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
-        section { margin-bottom: 80px; scroll-margin-top: 100px; /* 修复点击导航栏遮挡标题的问题 */ }
+        section { margin-bottom: 80px; scroll-margin-top: 100px; }
 
-        /* 导航栏 */
+        /* Navbar Section */
         nav {
-            position: sticky; /* 让导航栏吸顶 */
+            position: sticky; 
             top: 0;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(5px);
@@ -226,10 +226,10 @@
             <div class="research-grid">
                 
                 <div class="research-card">
-                    <img src="assets/img/project1.png" class="research-img" alt="Meta-RL with Efficient Memory" loading="lazy" onerror="this.style.display='none'">
+                    <img src="assets/img/project1.png" class="research-img" alt="Optimal Stopping Rule in Sequential Sampling for Decision-making" loading="lazy" onerror="this.style.display='none'">
                     <div class="research-content">
-                        <h3>Meta-RL with Efficient Memory</h3>
-                        <p>Developing a reinforcement learning agent capable of flexible decision-making by efficiently sampling past experiences.</p>
+                        <h3>Optimal Stopping Rule in Sequential Sampling for Decision-making</h3>
+                        <p>We trained reinforcement learning agent to study the optimal stopping rule in heterogeneous sequential sampling for decision-making.</p>
                         <div class="tags">
                             <span>Meta-RL</span>
                             <span>PyTorch</span>
@@ -240,10 +240,10 @@
                 </div>
 
                 <div class="research-card">
-                    <img src="https://via.placeholder.com/300x200" class="research-img" alt="Project Image" loading="lazy" onerror="this.style.display='none'">
+                    <img src="assets/img/project2.png" class="research-img" alt="Planning in Decision Tree" loading="lazy" onerror="this.style.display='none'">
                     <div class="research-content">
-                        <h3>Distributional RL & Reference Points</h3>
-                        <p>Investigating the relationship between reference points and distributional reinforcement learning using neural data analysis.</p>
+                        <h3>Planning in Decision Tree</h3>
+                        <p>We deisgned a decision tree task and build computational model to study human planning through reaction time and eye-tracking data,.</p>
                         <div class="tags">
                             <span>Neuroscience</span>
                             <span>Data Analysis</span>
