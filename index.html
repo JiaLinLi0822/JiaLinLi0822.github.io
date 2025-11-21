@@ -66,9 +66,12 @@
         .hero-image { flex: 1; text-align: center; }
         
         .hero-image img {
-            width: 200px; height: 200px;
-            border-radius: 50%; 
-            object-fit: cover;
+            width: auto; 
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 8px; 
+            object-fit: contain;
             border: 3px solid var(--bg-alt);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
@@ -223,7 +226,7 @@
             <div class="research-grid">
                 
                 <div class="research-card">
-                    <img src="https://via.placeholder.com/300x200" class="research-img" alt="Project Image" loading="lazy" onerror="this.style.display='none'">
+                    <img src="assets/img/project1.png" class="research-img" alt="Meta-RL with Efficient Memory" loading="lazy" onerror="this.style.display='none'">
                     <div class="research-content">
                         <h3>Meta-RL with Efficient Memory</h3>
                         <p>Developing a reinforcement learning agent capable of flexible decision-making by efficiently sampling past experiences.</p>
