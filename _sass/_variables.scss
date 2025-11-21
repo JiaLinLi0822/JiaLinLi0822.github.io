@@ -131,7 +131,12 @@ $small                      : 600px !default;
 $medium                     : 768px !default;
 $medium-wide                : 900px !default;
 $large                      : 925px !default;
-$x-large                    : 1280px !default;
+$x-large                    : 900px !default; /* Match index.html max-width */
+
+/* Layout variables matching index.html */
+$max-width                  : 900px;
+$section-spacing             : 60px;
+$container-padding           : 20px;
 
 /*
    Grid

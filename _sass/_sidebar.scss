@@ -47,9 +47,10 @@
   }
 
   p, li {
-    font-family: $sans-serif;
-    font-size: $type-size-6;
-    line-height: 1.5;
+    font-family: $global-font-family;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: $text-color;
   }
 
   img {

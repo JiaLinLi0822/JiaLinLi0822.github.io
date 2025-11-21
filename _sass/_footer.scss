@@ -14,7 +14,7 @@
   bottom: 0em;
   height: auto;
   /* sticky footer fix end */
-  margin-top: 3em;
+  margin-top: $section-spacing;
   color: $text-light-color;
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
@@ -23,6 +23,8 @@
   background-color: $bg-color;
   border-top: 1px solid $border-color;
   font-family: $header-font-family;
+  text-align: center;
+  padding: 40px 0;
 
   footer {
     @include clearfix;
@@ -55,8 +57,9 @@
 }
 
 .page__footer-copyright {
-  font-family: $global-font-family;
-  font-size: $type-size-7;
+  font-family: $header-font-family;
+  font-size: 0.85rem;
+  color: $text-light-color;
 }
 
 .page__footer-follow {
