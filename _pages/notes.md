@@ -1,8 +1,7 @@
 ---
-layout: archive
+layout: single
 title: "Notes"
 permalink: /notes/
-author_profile: true
 redirect_from:
   - /notes
 ---
