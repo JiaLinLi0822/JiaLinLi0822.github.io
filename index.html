@@ -148,6 +148,48 @@
             border-top: 1px solid var(--border); margin-top: 60px;
         }
 
+        /* Dark Mode Color Scheme */
+        [data-theme="dark"] {
+            --primary: #a78bfa;   /* Lighter purple for better visibility on dark background */
+            --secondary: #f1f5f9; /* Main text becomes light gray-white */
+            --accent: #38bdf8;    /* Brighter link hover color */
+            --bg: #0f172a;        /* Deep blue-black background */
+            --bg-alt: #1e293b;    /* Slightly lighter dark block */
+            --text-main: #cbd5e1; /* Body text */
+            --text-light: #94a3b8;/* Secondary text */
+            --border: #334155;    /* Darker border color */
+        }
+
+        /* Fix navbar background in dark mode */
+        [data-theme="dark"] nav {
+            background: rgba(15, 23, 42, 0.85); /* Dark semi-transparent */
+        }
+
+        /* Fix skill pill colors in dark mode */
+        [data-theme="dark"] .skill-pill {
+            background: var(--bg-alt);
+            color: var(--text-main);
+        }
+
+        [data-theme="dark"] .skill-pill:hover {
+            background: var(--primary);
+            color: #fff; /* White text on hover */
+        }
+
+        /* Theme toggle button styles */
+        #theme-toggle {
+            cursor: pointer;
+            margin-left: 20px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            transition: 0.2s;
+        }
+
+        #theme-toggle:hover {
+            color: var(--primary);
+            transform: rotate(15deg); /* Slight rotation on hover */
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero { flex-direction: column-reverse; text-align: center; }
@@ -167,7 +209,8 @@
                 <a href="#news">News</a>
                 <a href="#research">Research</a>
                 <a href="https://jialin0822.notion.site/Portfolio-18c6b75bc06880f28e14d017d80570f5" target="_blank">Portfolio</a>
-                <a href="assets/pdf/cv.pdf" target="_blank">CV</a> 
+                <a href="assets/pdf/cv.pdf" target="_blank">CV</a>
+                <i class="fas fa-moon" id="theme-toggle" title="Toggle Dark Mode"></i>
             </div>
         </nav>
 
@@ -280,6 +323,35 @@
         </footer>
 
     </div>
+
+    <script>
+
+        const toggleBtn = document.getElementById('theme-toggle');
+        const htmlTag = document.documentElement;
+        
+        const savedTheme = localStorage.getItem('theme');
+        
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlTag.setAttribute('data-theme', 'dark');
+            toggleBtn.classList.replace('fa-moon', 'fa-sun');
+        }
+        
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlTag.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                // Switch to light mode
+                htmlTag.setAttribute('data-theme', 'light');
+                toggleBtn.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                // Switch to dark mode
+                htmlTag.setAttribute('data-theme', 'dark');
+                toggleBtn.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
 
 </body>
 </html>
