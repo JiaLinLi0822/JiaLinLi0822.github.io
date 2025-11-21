@@ -106,6 +106,31 @@
         }
         .tags a:hover { background-color: var(--primary); color: white; }
 
+        /* --- 技能标签 (Skills) --- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .skill-pill {
+            padding: 6px 16px;
+            background: var(--bg-alt);
+            border-radius: 20px; /* 圆角效果 */
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px; 
+            transition: 0.2s;
+        }
+        .skill-pill:hover {
+            border-color: var(--primary);
+            background: #fff;
+            transform: translateY(-1px); 
+        }
+
         /* 页脚 */
         footer {
             text-align: center; padding: 40px 0; font-size: 0.85rem;
@@ -208,6 +233,24 @@
             </div>
         </section>
 
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <hr style="margin: 10px 0 20px 0; border: 0; border-top: 1px solid var(--border);">
+            
+            <div class="skills-grid">
+                <div class="skill-pill"><i class="fab fa-python" style="color:#3776ab;"></i> Python</div>
+                <div class="skill-pill"><i class="fas fa-cubes" style="color:#9558b2;"></i> Julia</div>
+                <div class="skill-pill"><i class="fas fa-chart-line" style="color:#e16737;"></i> MATLAB</div>
+                <div class="skill-pill"><i class="fas fa-code"></i> R</div>
+                
+                <div class="skill-pill"><i class="fas fa-fire" style="color:#ee4c2c;"></i> PyTorch</div>
+                <div class="skill-pill"><i class="fas fa-square-root-variable"></i> LaTeX</div>
+                
+                <div class="skill-pill"><i class="fas fa-eye"></i> Eye-tracking (EyeLink)</div>
+                <div class="skill-pill"><i class="fas fa-wave-square"></i> EEG Analysis</div>
+            </div>
+        </section>
+        
         <footer>
             <p>&copy; 2025 Jialin Li.</p>
         </footer>
