@@ -1,97 +1,218 @@
----
-layout: default
-title: Home
----
-
-<section id="about" class="hero">
-    <div class="hero-content">
-        <h1>Jialin Li</h1>
-        <div class="hero-subtitle">
-            Master's Student at <a href="https://www.nyu.edu">NYU</a> | Neuroscience & AI
-        </div>
-        <p>
-            I study the computational mechanisms of <b>human adaptive behavior</b> and <b>decision-making</b>. 
-            Currently, I work with <a href="#">Prof. Marcelo Mattar</a> on Meta-RL agents that efficiently sample from memory.
-            Previously, I completed my B.S. in Psychology at Peking University.
-        </p>
-        <br>
-        <p>
-            My goal is to understand how limited cognitive resources shape internal representations, integrating concepts from 
-            <b>Reinforcement Learning</b> and <b>Information Theory</b>.
-        </p>
-        <br>
-        <div class="social-links">
-            <a href="mailto:ljl2282002@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/JiaLinLi0822"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/ljl2282002"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
-    <div class="hero-image">
-        <img src="https://jialinli0822.github.io/images/profile.png" alt="Jialin Li Profile">
-    </div>
-</section>
-
-<section id="news">
-    <h2><i class="fas fa-bell" style="color:var(--primary); font-size: 0.8em; margin-right: 10px;"></i>News</h2>
-    <hr style="margin: 10px 0 20px 0; border: 0; border-top: 1px solid var(--border);">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jialin Li | Neuroscience & AI</title>
     
-    <div class="news-item">
-        <div class="date-badge">Nov 2025</div>
-        <div>Website updated with new portfolio projects.</div>
-    </div>
-    <div class="news-item">
-        <div class="date-badge">Jul 2024</div>
-        <div>Graduated from Peking University with a B.S. in Psychology.</div>
-    </div>
-</section>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<section id="research">
-    <h2>Selected Research</h2>
-    <hr style="margin: 10px 0 20px 0; border: 0; border-top: 1px solid var(--border);">
+    <style>
+        /* --- 这里是样式表，控制网页长什么样 --- */
+        :root {
+            --primary: #57068c;   /* 主色调：NYU紫 */
+            --secondary: #1e293b; /* 深色文字 */
+            --accent: #0ea5e9;    /* 链接悬停色：天蓝 */
+            --bg: #ffffff;        /* 背景色 */
+            --bg-alt: #f8fafc;    /* 浅灰背景（用于卡片/标签） */
+            --text-main: #334155;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --max-width: 900px;   /* 网页最大宽度 */
+        }
 
-    <div class="research-grid">
+        /* 基础重置 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lora', serif; color: var(--text-main); line-height: 1.7; background-color: var(--bg); }
+        h1, h2, h3, nav, .btn, .tags, .date-badge { font-family: 'Inter', sans-serif; }
+        a { text-decoration: none; color: var(--primary); transition: 0.2s; }
+        a:hover { color: var(--accent); }
         
-        <div class="research-card">
-            <img src="https://via.placeholder.com/300x200/eee/ccc?text=Meta+RL" class="research-img" alt="Research Diagram">
-            <div class="research-content">
-                <h3>Meta-RL with Efficient Memory Sampling</h3>
-                <p>Developing a reinforcement learning agent capable of flexible decision-making by efficiently sampling past experiences, mimicking human memory retrieval.</p>
-                <div class="tags">
-                    <span>Meta-RL</span>
-                    <span>Python</span>
-                    <span>PyTorch</span>
-                    <a href="#"><i class="fab fa-github"></i> Code</a>
-                    <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+        /* 布局容器 */
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+        section { margin-bottom: 80px; scroll-margin-top: 100px; /* 修复点击导航栏遮挡标题的问题 */ }
+
+        /* 导航栏 */
+        nav {
+            position: sticky; /* 让导航栏吸顶 */
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+            z-index: 1000;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; color: var(--secondary); }
+        .nav-links a { margin-left: 20px; color: var(--text-light); font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* 个人简介 (Hero) */
+        .hero { display: flex; align-items: center; gap: 40px; margin-top: 40px;}
+        .hero-content { flex: 2; }
+        .hero-image { flex: 1; text-align: center; }
+        
+        .hero-image img {
+            width: 200px; height: 200px;
+            border-radius: 50%; 
+            object-fit: cover;
+            border: 3px solid var(--bg-alt);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .hero h1 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 10px; }
+        .hero-subtitle { font-size: 1.1rem; color: var(--text-light); margin-bottom: 20px; font-weight: 300; }
+        
+        .social-links a { font-size: 1.5rem; margin-right: 15px; color: var(--text-light); }
+        .social-links a:hover { color: var(--primary); transform: translateY(-2px); display: inline-block; }
+
+        /* 新闻列表 */
+        .news-item { display: flex; gap: 15px; margin-bottom: 15px; font-family: 'Inter', sans-serif; font-size: 0.95rem; }
+        .date-badge {
+            background: var(--bg-alt); padding: 2px 8px; border-radius: 4px;
+            color: var(--text-light); font-weight: 600; font-size: 0.85rem;
+            height: fit-content; border: 1px solid var(--border); min-width: 80px; text-align: center;
+        }
+
+        /* 研究列表 (卡片式) */
+        .research-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .research-card {
+            display: flex; gap: 20px; padding: 20px;
+            border: 1px solid var(--border); border-radius: 8px; background: var(--bg);
+            transition: 0.3s;
+        }
+        .research-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-color: var(--primary); }
+        .research-img {
+            width: 160px; height: 120px;
+            background-color: var(--bg-alt); border-radius: 6px; object-fit: cover; flex-shrink: 0;
+        }
+        .research-content h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--secondary); }
+        .research-content p { font-size: 0.95rem; color: var(--text-main); margin-bottom: 10px; }
+        
+        .tags span {
+            display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.75rem;
+            padding: 3px 8px; border-radius: 12px; margin-right: 5px;
+            border: 1px solid var(--border); color: var(--text-light);
+        }
+        .tags a {
+            display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.75rem;
+            padding: 3px 8px; border-radius: 4px; margin-right: 5px;
+            background-color: var(--bg-alt); color: var(--primary); font-weight: 600;
+        }
+        .tags a:hover { background-color: var(--primary); color: white; }
+
+        /* 页脚 */
+        footer {
+            text-align: center; padding: 40px 0; font-size: 0.85rem;
+            color: var(--text-light); font-family: 'Inter', sans-serif;
+            border-top: 1px solid var(--border); margin-top: 60px;
+        }
+
+        /* 手机端适配 */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .research-card { flex-direction: column; }
+            .research-img { width: 100%; height: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav>
+            <div class="nav-brand">Jialin Li</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#news">News</a>
+                <a href="#research">Research</a>
+                <a href="assets/pdf/cv.pdf" target="_blank">CV</a> 
+            </div>
+        </nav>
+
+        <section id="about" class="hero">
+            <div class="hero-content">
+                <h1>Jialin Li</h1>
+                <div class="hero-subtitle">
+                    Master's Student at <a href="https://www.nyu.edu">NYU</a> | Neuroscience & AI
+                </div>
+                <p>
+                    I study the computational mechanisms of <b>human adaptive behavior</b> and <b>decision-making</b>. 
+                    Currently, I work with <a href="#">Prof. Marcelo Mattar</a> on Meta-RL agents.
+                    Previously, I completed my B.S. in Psychology at Peking University.
+                </p>
+                <br>
+                <div class="social-links">
+                    <a href="mailto:ljl2282002@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/JiaLinLi0822"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/ljl2282002"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
-        </div>
-
-        <div class="research-card">
-            <img src="https://via.placeholder.com/300x200/eee/ccc?text=Distributional+RL" class="research-img" alt="Research Diagram">
-            <div class="research-content">
-                <h3>Reference Points & Distributional RL</h3>
-                <p>Investigating the relationship between reference points and distributional reinforcement learning using neural data analysis. Work with Prof. Paul Glimcher.</p>
-                <div class="tags">
-                    <span>Neuroscience</span>
-                    <span>Data Analysis</span>
-                    <a href="#"><i class="far fa-file-pdf"></i> Poster</a>
-                </div>
+            <div class="hero-image">
+                <img src="assets/img/avatar.jpg" alt="Jialin Li Profile" onerror="this.src='https://via.placeholder.com/200'">
             </div>
-        </div>
+        </section>
+
+        <section id="news">
+            <h2>News</h2>
+            <hr style="margin: 10px 0 20px 0; border: 0; border-top: 1px solid var(--border);">
+            
+            <div class="news-item">
+                <div class="date-badge">Nov 2025</div>
+                <div>Website updated with new design.</div>
+            </div>
+            <div class="news-item">
+                <div class="date-badge">Jul 2024</div>
+                <div>Graduated from Peking University.</div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Selected Research</h2>
+            <hr style="margin: 10px 0 20px 0; border: 0; border-top: 1px solid var(--border);">
+
+            <div class="research-grid">
+                
+                <div class="research-card">
+                    <img src="https://via.placeholder.com/300x200" class="research-img" alt="Project Image">
+                    <div class="research-content">
+                        <h3>Meta-RL with Efficient Memory</h3>
+                        <p>Developing a reinforcement learning agent capable of flexible decision-making by efficiently sampling past experiences.</p>
+                        <div class="tags">
+                            <span>Meta-RL</span>
+                            <span>PyTorch</span>
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-card">
+                    <img src="https://via.placeholder.com/300x200" class="research-img" alt="Project Image">
+                    <div class="research-content">
+                        <h3>Distributional RL & Reference Points</h3>
+                        <p>Investigating the relationship between reference points and distributional reinforcement learning using neural data analysis.</p>
+                        <div class="tags">
+                            <span>Neuroscience</span>
+                            <span>Data Analysis</span>
+                            <a href="#"><i class="far fa-file-pdf"></i> Poster</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Jialin Li.</p>
+        </footer>
 
     </div>
-</section>
 
-<section id="skills">
-    <h2>Technical Skills</h2>
-    <hr style="margin: 10px 0 20px 0; border: 0; border-top: 1px solid var(--border);">
-    <div class="skills-grid">
-        <div class="skill-pill"><i class="fab fa-python"></i> Python (Proficient)</div>
-        <div class="skill-pill"><i class="fas fa-chart-bar"></i> R / MATLAB</div>
-        <div class="skill-pill"><i class="fas fa-brain"></i> PyTorch / TensorFlow</div>
-        <div class="skill-pill"><i class="fas fa-code"></i> LaTeX</div>
-        <div class="skill-pill"><i class="fas fa-eye"></i> Eye-tracking (EyeLink)</div>
-        <div class="skill-pill"><i class="fas fa-wave-square"></i> EEG Analysis</div>
-    </div>
-</section>
+</body>
+</html>
