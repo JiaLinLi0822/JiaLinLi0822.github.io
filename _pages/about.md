@@ -1,18 +1,107 @@
 ---
 permalink: /
 title: "About me"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
+layout: default
 ---
 
-Hi, I'm a master student at [New York University](https://www.nyu.edu). Currently, I work with [Prof. Marcelo Mattar](https://as.nyu.edu/faculty/marcelo-mattar.html) on developing Meta RL agent with capability to efficiently sample from memory and make flexible decision. Additionally, I work with [Prof. Paul Glimcher](https://as.nyu.edu/faculty/paul-glimcher.html) on a project where we are trying to understanding the relationship between reference point and distributional RL using neural data. Prior to this, I graduated with an B.S. in Psychology from [School of Psychological and Cognitive Sciences](https://www.psy.pku.edu.cn) at [Peking University](https://www.pku.edu.cn/) in July 2024, where I worked with [Prof. Jian Li](https://www.psy.pku.edu.cn/english/people/faculty/professor/jianli/index.htm). My undergraduate thesis investigated the context-dependent exploration-exploitation behavior on human decision making.
+<section id="about" class="hero">
+    <div class="hero-content">
+        <h1>{{ site.author.name | default: site.name }}</h1>
+        <div class="hero-subtitle">
+            Master's Student at <a href="https://www.nyu.edu">NYU</a> | Neuroscience & AI
+        </div>
+        <p>
+            I study the computational mechanisms of <b>human adaptive behavior</b> and <b>decision-making</b>. 
+            Currently, I work with <a href="https://as.nyu.edu/faculty/marcelo-mattar.html">Prof. Marcelo Mattar</a> on Meta-RL agents that efficiently sample from memory.
+            Previously, I completed my B.S. in Psychology at Peking University.
+        </p>
+        <br>
+        <p>
+            My goal is to understand how limited cognitive resources shape internal representations, integrating concepts from 
+            <b>Reinforcement Learning</b> and <b>Information Theory</b>.
+        </p>
+        <br>
+        <div class="social-links">
+            {% if site.author.email %}
+                <a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope"></i></a>
+            {% endif %}
+            {% if site.author.github %}
+                <a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github"></i></a>
+            {% endif %}
+            {% if site.author.twitter %}
+                <a href="https://twitter.com/{{ site.author.twitter }}"><i class="fab fa-twitter"></i></a>
+            {% endif %}
+            {% if site.author.linkedin %}
+                <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}"><i class="fab fa-linkedin"></i></a>
+            {% endif %}
+            {% if site.author.googlescholar %}
+                <a href="{{ site.author.googlescholar }}"><i class="fas fa-graduation-cap"></i></a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="{{ site.author.avatar | prepend: '/images/' | prepend: base_path }}" alt="{{ site.author.name }} Profile">
+    </div>
+</section>
 
-My research interest lies in understanding the neural and computational mechanism of human adaptive behavior and decision-making. Human’s decision can be understood as in a 'resource-rational' way, where we are trying to maximize our utility under the limited memory and computational capacity. From the perspective of efficient coding, human must leverage the limited cognitive resources to form efficient internal representation, enabling adaptation to changing environments. That is also the key point in terms of why human exhibits superior learning and generalization ability in different scenarios. Therefore, I try to reveal the potential neural and computational mechanism of human flexible decision-making. Specifically, I seek to understand what kinds of internal representations are essential for adaptive decision processes by integrating concepts from reinforcement learning and information theory.
+<section id="news">
+    <h2><i class="fas fa-bell" style="color:var(--primary); font-size: 0.8em; margin-right: 10px;"></i>News</h2>
+    <hr style="margin: 10px 0 20px 0; border: 0; border-top: 1px solid var(--border);">
+    
+    <div class="news-item">
+        <div class="date-badge">Nov 2025</div>
+        <div>Website updated with new portfolio projects.</div>
+    </div>
+    <div class="news-item">
+        <div class="date-badge">Jul 2024</div>
+        <div>Graduated from Peking University with a B.S. in Psychology.</div>
+    </div>
+</section>
 
-My research skills include:
-- **Coding**: Python (Proficient), R (Proficient), MATLAB (Proficient), LaTeX (Proficient), Julia (Elementary), JavaScript/CSS/HTML (Intermediate)
-- **Data Collection**: Behavior (Psychtoolbox/Psychpy/jsPsych), Eye-tracking (EyeLink), EEG (BrainVision)
-- **Computational**: Reinforcement learning (Gym), Hierarchy Bayesian Inference (Pymc), Artificial Neural Network (Pytorch, Tensorflow)
-- **Command line**: Git, Bash, Vim
+<section id="research">
+    <h2>Selected Research</h2>
+    <hr style="margin: 10px 0 20px 0; border: 0; border-top: 1px solid var(--border);">
+
+    <div class="research-grid">
+        <div class="research-card">
+            <img src="https://via.placeholder.com/300x200/eee/ccc?text=Meta+RL" class="research-img" alt="Research Diagram">
+            <div class="research-content">
+                <h3>Meta-RL with Efficient Memory Sampling</h3>
+                <p>Developing a reinforcement learning agent capable of flexible decision-making by efficiently sampling past experiences, mimicking human memory retrieval.</p>
+                <div class="tags">
+                    <span>Meta-RL</span>
+                    <span>Python</span>
+                    <span>PyTorch</span>
+                    <a href="#"><i class="fab fa-github"></i> Code</a>
+                    <a href="#"><i class="far fa-file-pdf"></i> PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="research-card">
+            <img src="https://via.placeholder.com/300x200/eee/ccc?text=Distributional+RL" class="research-img" alt="Research Diagram">
+            <div class="research-content">
+                <h3>Reference Points & Distributional RL</h3>
+                <p>Investigating the relationship between reference points and distributional reinforcement learning using neural data analysis. Work with Prof. Paul Glimcher.</p>
+                <div class="tags">
+                    <span>Neuroscience</span>
+                    <span>Data Analysis</span>
+                    <a href="#"><i class="far fa-file-pdf"></i> Poster</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Technical Skills</h2>
+    <hr style="margin: 10px 0 20px 0; border: 0; border-top: 1px solid var(--border);">
+    <div class="skills-grid">
+        <div class="skill-pill"><i class="fab fa-python"></i> Python (Proficient)</div>
+        <div class="skill-pill"><i class="fas fa-chart-bar"></i> R / MATLAB</div>
+        <div class="skill-pill"><i class="fas fa-brain"></i> PyTorch / TensorFlow</div>
+        <div class="skill-pill"><i class="fas fa-code"></i> LaTeX</div>
+        <div class="skill-pill"><i class="fas fa-eye"></i> Eye-tracking (EyeLink)</div>
+        <div class="skill-pill"><i class="fas fa-wave-square"></i> EEG Analysis</div>
+    </div>
+</section>

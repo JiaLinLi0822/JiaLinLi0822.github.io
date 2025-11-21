@@ -1,0 +1,22 @@
+{% include base_path %}
+
+<nav>
+    <div class="nav-brand">
+        <a href="{{ base_path }}/">{{ site.name | default: site.title }}</a>
+    </div>
+    <div class="nav-links">
+        <a href="{{ base_path }}/">About</a>
+        {% for link in site.data.navigation.main %}
+            {% if link.url contains 'http' %}
+                {% assign domain = '' %}
+            {% else %}
+                {% assign domain = base_path %}
+            {% endif %}
+            <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+        {% if site.author.github %}
+            <a href="https://github.com/{{ site.author.github }}" target="_blank">Code</a>
+        {% endif %}
+    </div>
+</nav>
+

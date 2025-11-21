@@ -4,28 +4,43 @@ layout: compress
 
 {% include base_path %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-  <head>
-    {% include head.html %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
+    
+    {% include seo.html %}
+    
+    <!-- Google Fonts - Inter and Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom styles matching index.html (overrides main.css) -->
+    <link rel="stylesheet" href="{{ base_path }}/assets/css/index-style.css">
+    
     {% include head/custom.html %}
-  </head>
-
-  <body>
-
+    
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
+</head>
+<body>
     {% include browser-upgrade.html %}
-    {% include masthead.html %}
-
-    {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
+    
+    <div class="container">
+        {% include nav.html %}
+        
+        {{ content }}
+        
         {% include footer.html %}
-      </footer>
     </div>
-
+    
     {% include scripts.html %}
-
-  </body>
+</body>
 </html>
