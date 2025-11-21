@@ -13,23 +13,23 @@ $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
 /* system typefaces */
-$serif                      : Georgia, Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$serif                      : "Lora", Georgia, Times, serif;
+$sans-serif                 : "Inter", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* sans serif typefaces */
-$sans-serif-narrow          : $sans-serif;
+$sans-serif-narrow          : "Inter", $sans-serif;
 $helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;
 
 /* serif typefaces */
-$georgia                    : Georgia, serif;
+$georgia                    : "Lora", Georgia, serif;
 $times                      : Times, serif;
 $bodoni                     : "Bodoni MT", serif;
 $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 
-$global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif;
+$global-font-family         : $serif; /* Lora for body text */
+$header-font-family         : $sans-serif; /* Inter for headers */
 $caption-font-family        : $serif;
 
 /* type scale */
@@ -55,24 +55,29 @@ $sidebar-link-max-width     : 250px;
    Colors
    ========================================================================== */
 
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
-$lighter-gray               : mix(#fff, $gray, 90%);
+/* New color scheme matching index.html */
+$primary-color              : #57068c; /* NYU Violet */
+$secondary-color            : #1e293b; /* Dark Slate */
+$accent-color               : #0ea5e9; /* Sky Blue for Links */
+$bg-color                   : #ffffff;
+$bg-alt-color               : #f8fafc;
+$text-main-color            : #334155;
+$text-light-color           : #64748b;
+$border-color-new           : #e2e8f0;
+
+/* Legacy gray variables (keeping for compatibility) */
+$gray                       : #64748b;
+$dark-gray                  : #334155;
+$darker-gray                : #1e293b;
+$light-gray                 : #94a3b8;
+$lighter-gray               : #e2e8f0;
 
 $body-color                 : #fff;
 $background-color           : #fff;
-$code-background-color      : #fafafa;
+$code-background-color      : #f8fafc;
 $code-background-color-dark : $light-gray;
-$text-color                 : $dark-gray;
-$border-color               : $lighter-gray;
-
-$primary-color              : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
+$text-color                 : $text-main-color;
+$border-color               : $border-color-new;
 
 /* brands */
 $behance-color              : #1769FF;
@@ -102,11 +107,11 @@ $xing-color                 : #006567;
 
 
 /* links */
-$link-color                 : $info-color;
-$link-color-hover           : mix(#000, $link-color, 25%);
+$link-color                 : $primary-color;
+$link-color-hover           : $accent-color;
 $link-color-visited         : mix(#fff, $link-color, 25%);
-$masthead-link-color        : $primary-color;
-$masthead-link-color-hover  : mix(#000, $primary-color, 25%);
+$masthead-link-color        : $text-light-color;
+$masthead-link-color-hover  : $primary-color;
 
 
 /*
