@@ -148,23 +148,31 @@
             text-decoration: none;
         }
 
-        /* Education thesis button styles */
-        .edu-links {
-            margin-top: 10px;
+        /* Education date + thesis link styles */
+        .edu-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            white-space: nowrap;
         }
-        .edu-links a {
+        .edu-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .edu-thesis-link {
             display: inline-block;
             font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            padding: 4px 10px;
+            font-size: 0.72rem;
+            letter-spacing: 0.02em;
+            padding: 3px 8px;
             border-radius: 4px;
-            margin-right: 8px;
             background-color: var(--bg-alt);
             color: var(--primary);
             font-weight: 600;
             border: 1px solid var(--border);
         }
-        .edu-links a:hover {
+        .edu-thesis-link:hover {
             background-color: var(--primary);
             color: #fff;
             border-color: var(--primary);
@@ -351,7 +359,10 @@
                 <div style="flex-grow: 1;">
                     <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
                         <h3 style="font-size: 1.1rem; color: var(--secondary); margin: 0;">New York University (NYU)</h3>
-                        <div style="color: var(--text-light); font-size: 0.9rem; white-space: nowrap;">2024 - Present</div>
+                        <div class="edu-meta">
+                            <div class="edu-date">2024 - Present</div>
+                            <a class="edu-thesis-link" href="assets/pdf/master_thesis.pdf" target="_blank"><i class="far fa-file-pdf"></i> Thesis</a>
+                        </div>
                     </div>
                     
                     <div style="color: var(--text-light); font-style: italic; margin-top: 5px; line-height: 1.4;">
@@ -362,9 +373,6 @@
                         Advisor: Prof. Marcelo Mattar & Prof. Paul Glimcher
                     </div>
 
-                    <div class="edu-links">
-                        <a href="assets/pdf/master_thesis.pdf" target="_blank"><i class="far fa-file-pdf"></i> Thesis</a>
-                    </div>
                 </div>
             </div>
         
@@ -376,7 +384,10 @@
                 <div style="flex-grow: 1;">
                     <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
                         <h3 style="font-size: 1.1rem; color: var(--secondary); margin: 0;">Peking University (PKU)</h3>
-                        <div style="color: var(--text-light); font-size: 0.9rem; white-space: nowrap;">2020 - 2024</div>
+                        <div class="edu-meta">
+                            <div class="edu-date">2020 - 2024</div>
+                            <a class="edu-thesis-link" href="assets/pdf/undergraduate_thesis.pdf" target="_blank"><i class="far fa-file-pdf"></i> Thesis (Chinese)</a>
+                        </div>
                     </div>
                     
                     <div style="color: var(--text-light); font-style: italic; margin-top: 5px; line-height: 1.4;">
@@ -387,9 +398,6 @@
                         Advisor: Prof. Jian Li
                     </div>
 
-                    <div class="edu-links">
-                        <a href="assets/pdf/undergraduate_thesis.pdf" target="_blank"><i class="far fa-file-pdf"></i> Thesis (Chinese)</a>
-                    </div>
                 </div>
             </div>
         </section>
