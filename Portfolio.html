@@ -243,6 +243,58 @@
             font-size: 0.86rem;
         }
 
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-section .eyebrow {
+            justify-content: center;
+        }
+
+        .contact-section .eyebrow::before {
+            display: none;
+        }
+
+        .contact-section h2 {
+            font-size: clamp(1.55rem, 3vw, 2.45rem);
+            letter-spacing: 0;
+        }
+
+        .contact-section p {
+            width: min(620px, 100%);
+            margin: 14px auto 0;
+            color: var(--muted);
+            font-family: "Lora", serif;
+            font-size: 0.96rem;
+            line-height: 1.62;
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        .contact-email {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .contact-line .social-row {
+            margin-top: 0;
+            justify-content: center;
+        }
+
+        .contact-line .social-row a {
+            width: 36px;
+            height: 36px;
+        }
+
         .section-label {
             width: min(var(--max), calc(100% - 36px));
             margin: 44px auto 18px;
@@ -413,52 +465,6 @@
             padding: 64px 0 12px;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .info-card {
-            min-height: 224px;
-            padding: 24px;
-            border: 1px solid var(--glass-border);
-            border-radius: 8px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(22px) saturate(1.15);
-        }
-
-        .info-card .icon {
-            width: 40px;
-            height: 40px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 18px;
-            border-radius: 999px;
-            background: var(--pill-bg);
-            color: var(--cream);
-        }
-
-        .info-card h2,
-        .info-card h3 {
-            margin-bottom: 12px;
-            font-size: 1.12rem;
-        }
-
-        .info-card p,
-        .info-card li {
-            color: var(--muted);
-            font-size: 0.92rem;
-            line-height: 1.58;
-        }
-
-        .info-card ul {
-            display: grid;
-            gap: 8px;
-            padding-left: 18px;
-        }
-
         .performance-grid {
             width: min(var(--max), calc(100% - 36px));
             margin: 0 auto;
@@ -568,10 +574,12 @@
 
         .track-list,
         .now-playing {
+            position: relative;
+            overflow: hidden;
             border: 1px solid var(--glass-border);
             border-radius: 12px;
             background: var(--glass-bg);
-            backdrop-filter: blur(24px) saturate(1.16);
+            backdrop-filter: blur(16px) saturate(1.12);
             box-shadow: 0 24px 70px var(--shadow);
         }
 
@@ -582,6 +590,13 @@
         }
 
         .track-button {
+            --cover-image: none;
+            --cover-glow: rgba(241, 218, 192, 0.18);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            contain: paint;
+            clip-path: inset(0 round 10px);
             width: 100%;
             display: grid;
             grid-template-columns: auto 1fr auto;
@@ -598,11 +613,54 @@
             transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
         }
 
+        .track-button::before,
+        .track-button::after,
+        .now-playing::before,
+        .now-playing::after {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .track-button::before {
+            inset: 0;
+            z-index: 0;
+            background-image:
+                var(--cover-image),
+                radial-gradient(circle at 24% 28%, var(--cover-glow), transparent 52%);
+            background-position: center;
+            background-size: cover;
+            filter: blur(7px) saturate(1.14) brightness(0.96);
+            opacity: 0.5;
+            transform: scale(1.04);
+            transition: opacity 180ms ease, transform 180ms ease;
+        }
+
+        .track-button::after {
+            inset: 0;
+            z-index: 0;
+            background:
+                linear-gradient(90deg, rgba(15, 15, 16, 0.68), rgba(15, 15, 16, 0.38)),
+                rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px) saturate(1.08);
+        }
+
+        .track-button > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .track-button:hover,
         .track-button.active {
             transform: translateY(-1px);
             border-color: var(--glass-border);
             background: var(--pill-hover);
+        }
+
+        .track-button:hover::before,
+        .track-button.active::before {
+            opacity: 0.66;
+            transform: scale(1.06);
         }
 
         .track-button i {
@@ -633,11 +691,42 @@
         }
 
         .now-playing {
+            --cover-image: none;
+            --cover-glow: rgba(241, 218, 192, 0.2);
+            isolation: isolate;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             min-height: 318px;
             padding: 26px;
+        }
+
+        .now-playing::before {
+            inset: -12px;
+            z-index: 0;
+            background-image:
+                var(--cover-image),
+                radial-gradient(circle at 28% 18%, var(--cover-glow), transparent 48%);
+            background-position: center;
+            background-size: cover;
+            filter: blur(12px) saturate(1.16) brightness(0.92);
+            opacity: 0.72;
+            transform: scale(1.03);
+            transition: background-image 220ms ease, opacity 220ms ease;
+        }
+
+        .now-playing::after {
+            inset: 0;
+            z-index: 0;
+            background:
+                linear-gradient(115deg, rgba(13, 13, 14, 0.68), rgba(13, 13, 14, 0.34) 52%, rgba(13, 13, 14, 0.58)),
+                rgba(255, 255, 255, 0.035);
+            backdrop-filter: blur(10px) saturate(1.12);
+        }
+
+        .now-playing > * {
+            position: relative;
+            z-index: 1;
         }
 
         .player-badge {
@@ -747,8 +836,7 @@
 
             .hero-grid,
             .music-player,
-            .performance-grid,
-            .info-grid {
+            .performance-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -824,7 +912,6 @@
                 <a href="#photography">Photography</a>
                 <a href="#performance">Performance</a>
                 <a href="#music">Music</a>
-                <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
             </div>
             <a class="home-link" href="index.html" aria-label="Back to academic homepage">
@@ -1121,7 +1208,10 @@
                         data-kind="Composition"
                         data-note="Teenagers on the Lake Shore was created to capture the emotions of transitioning from middle school to high school: the bittersweet feeling of growing up and parting, and the hopeful anticipation of a new beginning."
                         data-src="assets/music/少年湖畔(Teenagers on the Lake Shore).mp3"
-                        data-format="MP3">
+                        data-format="MP3"
+                        data-cover="assets/img/music-covers/teenagers-on-the-lake-shore.jpg"
+                        data-glow="rgba(241, 218, 192, 0.28)"
+                        style="--cover-image: url('assets/img/music-covers/teenagers-on-the-lake-shore.jpg'); --cover-glow: rgba(241, 218, 192, 0.28);">
                         <i class="fa-solid fa-play"></i>
                         <span>
                             <span class="track-title">少年湖畔</span>
@@ -1134,7 +1224,10 @@
                         data-kind="Composition"
                         data-note="Mermaid is one of my original works, carrying a lyrical, dreamlike mood through melody and arrangement."
                         data-src="assets/music/美人鱼(Mermaid).wav"
-                        data-format="WAV">
+                        data-format="WAV"
+                        data-cover="assets/img/music-covers/mermaid.jpeg"
+                        data-glow="rgba(143, 200, 223, 0.26)"
+                        style="--cover-image: url('assets/img/music-covers/mermaid.jpeg'); --cover-glow: rgba(143, 200, 223, 0.26);">
                         <i class="fa-solid fa-play"></i>
                         <span>
                             <span class="track-title">美人鱼</span>
@@ -1147,7 +1240,10 @@
                         data-kind="A cappella Rearrangement"
                         data-note="The original song was composed by H.E.R. I rearranged it into an a cappella version."
                         data-src="assets/music/Best part (a cappella).mp3"
-                        data-format="MP3">
+                        data-format="MP3"
+                        data-cover="assets/img/music-covers/best_part.jpeg"
+                        data-glow="rgba(159, 189, 156, 0.26)"
+                        style="--cover-image: url('assets/img/music-covers/best_part.jpeg'); --cover-glow: rgba(159, 189, 156, 0.26);">
                         <i class="fa-solid fa-play"></i>
                         <span>
                             <span class="track-title">Best Part</span>
@@ -1160,7 +1256,10 @@
                         data-kind="Rearrangement"
                         data-note="One of my favorite English songs by Don McLean, rearranged and performed with guitar."
                         data-src="assets/music/Vincent.wav"
-                        data-format="WAV">
+                        data-format="WAV"
+                        data-cover="assets/img/music-covers/vincent-cover.jpg"
+                        data-glow="rgba(222, 143, 102, 0.25)"
+                        style="--cover-image: url('assets/img/music-covers/vincent-cover.jpg'); --cover-glow: rgba(222, 143, 102, 0.25);">
                         <i class="fa-solid fa-play"></i>
                         <span>
                             <span class="track-title">Vincent</span>
@@ -1170,7 +1269,7 @@
                     </button>
                 </div>
 
-                <div class="now-playing">
+                <div class="now-playing" style="--cover-image: url('assets/img/music-covers/teenagers-on-the-lake-shore.jpg'); --cover-glow: rgba(241, 218, 192, 0.28);">
                     <div>
                         <span class="player-badge"><i class="fa-solid fa-compact-disc"></i></span>
                         <h3 id="current-track-title">少年湖畔</h3>
@@ -1185,62 +1284,21 @@
                 </div>
             </div>
 
-            <div class="info-grid">
-                <article class="info-card">
-                    <span class="icon"><i class="fa-solid fa-music"></i></span>
-                    <h2>Music</h2>
-                    <p>Music gives me endless strength and inspiration. It has the power to uplift my spirit in difficult times, soothe my soul when I feel lost, and ignite my passion when I seek motivation.</p>
-                </article>
-                <article class="info-card">
-                    <span class="icon"><i class="fa-solid fa-list-check"></i></span>
-                    <h3>Performance</h3>
-                    <ul>
-                        <li>Symphony Orchestra, 2012-2024</li>
-                        <li>A cappella, 2020-2024</li>
-                        <li>Piano, Central Conservatory of Music Grade 9</li>
-                        <li>Double Bass, China Conservatory of Music Grade 9</li>
-                    </ul>
-                </article>
-                <article class="info-card" id="skills">
-                    <span class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-                    <h3>Creative Skills</h3>
-                    <ul>
-                        <li>Video Editing: Premiere</li>
-                        <li>Graphic Designing: Blender</li>
-                        <li>Music Composition: Logic Pro, Sibelius, Musescore</li>
-                        <li>Languages: Chinese, English, Spanish</li>
-                    </ul>
-                </article>
-            </div>
         </section>
 
-        <section class="content-section" id="contact">
-            <div class="info-grid">
-                <article class="info-card">
-                    <span class="icon"><i class="fa-solid fa-paper-plane"></i></span>
-                    <h2>Let’s Bring Your Vision to Life</h2>
-                    <p>Whether you would like to collaborate with me about music or photography, I’m always here to share and create something exceptional.</p>
-                </article>
-                <article class="info-card">
-                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                    <h3>Contact</h3>
-                    <p><a href="mailto:ljl2282002@gmail.com">ljl2282002@gmail.com</a></p>
-                    <div class="social-row" aria-label="Social links">
-                        <a href="https://www.instagram.com/ljl2282002?igsh=MXB6dW1qNjBhdmJyOQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@JackieLi0822" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://x.com/ljl2282002?s=21&t=B9N99lVnHUgxv27qIW93Bg" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://space.bilibili.com/299720564?spm_id_from=333.1007.0.0" target="_blank" rel="noopener noreferrer" aria-label="Bilibili"><i class="fa-solid fa-tv"></i></a>
-                        <a href="https://www.linkedin.com/in/jialin-li-831253318/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </article>
-                <article class="info-card">
-                    <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
-                    <h3>Academic Home</h3>
-                    <p>For research, CV, publications, and notes, return to my academic homepage.</p>
-                    <div class="social-row">
-                        <a href="index.html" aria-label="Academic homepage"><i class="fa-solid fa-arrow-left"></i></a>
-                    </div>
-                </article>
+        <section class="content-section contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="eyebrow">Contact</div>
+            <h2 id="contact-title">Let’s Bring Your Vision to Life</h2>
+            <p>Whether you would like to collaborate with me about music or photography, I’m always here to share and create something exceptional.</p>
+            <div class="contact-line" aria-label="Contact links">
+                <a class="contact-email" href="mailto:ljl2282002@gmail.com">ljl2282002@gmail.com</a>
+                <div class="social-row" aria-label="Social links">
+                    <a href="https://www.instagram.com/ljl2282002?igsh=MXB6dW1qNjBhdmJyOQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@JackieLi0822" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://x.com/ljl2282002?s=21&t=B9N99lVnHUgxv27qIW93Bg" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://space.bilibili.com/299720564?spm_id_from=333.1007.0.0" target="_blank" rel="noopener noreferrer" aria-label="Bilibili"><i class="fa-solid fa-tv"></i></a>
+                    <a href="https://www.linkedin.com/in/jialin-li-831253318/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
             </div>
         </section>
     </main>
@@ -1373,6 +1431,14 @@
         const currentTrackTitle = document.getElementById("current-track-title");
         const currentTrackNote = document.getElementById("current-track-note");
         const currentTrackMeta = document.getElementById("current-track-meta");
+        const nowPlaying = document.querySelector(".now-playing");
+
+        const syncPlayerArtwork = (button) => {
+            const cover = button.dataset.cover ? `url("${button.dataset.cover}")` : "none";
+            const glow = button.dataset.glow || "rgba(241, 218, 192, 0.2)";
+            nowPlaying.style.setProperty("--cover-image", cover);
+            nowPlaying.style.setProperty("--cover-glow", glow);
+        };
 
         trackButtons.forEach((button) => {
             button.addEventListener("click", () => {
@@ -1382,6 +1448,7 @@
                 currentTrackTitle.textContent = button.dataset.title;
                 currentTrackNote.textContent = button.dataset.note;
                 currentTrackMeta.textContent = `${button.dataset.kind} · ${button.dataset.format}`;
+                syncPlayerArtwork(button);
 
                 if (musicPlayer.getAttribute("src") !== button.dataset.src) {
                     musicPlayer.src = button.dataset.src;
