@@ -181,6 +181,74 @@
             padding: 34px max(18px, calc((100vw - var(--max)) / 2)) 72px;
         }
 
+        .hero-art-strip {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: clamp(10px, 1.5vw, 18px);
+            flex-wrap: wrap;
+            margin: 28px auto 0;
+            max-width: min(900px, 100%);
+        }
+
+        .hero-art-strip img {
+            width: var(--art-width, clamp(78px, 8vw, 124px));
+            aspect-ratio: var(--art-ratio, 4 / 5);
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+            opacity: 0;
+            filter: saturate(0.96) contrast(0.98) brightness(0.94);
+            transform: translateY(16px) rotate(var(--art-rotate, 0deg)) scale(0.96);
+            animation: artFloatIn 700ms ease forwards;
+            animation-delay: var(--art-delay, 0ms);
+        }
+
+        .hero-art-1 {
+            --art-width: clamp(78px, 8vw, 120px);
+            --art-ratio: 2 / 3;
+            --art-rotate: -5deg;
+            --art-delay: 80ms;
+        }
+
+        .hero-art-2 {
+            --art-width: clamp(94px, 10vw, 148px);
+            --art-ratio: 4 / 3;
+            --art-rotate: 4deg;
+            --art-delay: 180ms;
+            margin-top: 14px;
+        }
+
+        .hero-art-3 {
+            --art-width: clamp(80px, 8vw, 122px);
+            --art-ratio: 2 / 3;
+            --art-rotate: -3deg;
+            --art-delay: 280ms;
+        }
+
+        .hero-art-4 {
+            --art-width: clamp(82px, 8vw, 124px);
+            --art-ratio: 2 / 3;
+            --art-rotate: 5deg;
+            --art-delay: 380ms;
+            margin-top: 12px;
+        }
+
+        .hero-art-5 {
+            --art-width: clamp(82px, 8vw, 124px);
+            --art-ratio: 2 / 3;
+            --art-rotate: -4deg;
+            --art-delay: 480ms;
+        }
+
+        @keyframes artFloatIn {
+            to {
+                opacity: 0.88;
+                transform: translateY(0) rotate(var(--art-rotate, 0deg)) scale(1);
+            }
+        }
+
         @keyframes heroImageFade {
             from {
                 opacity: 0;
@@ -198,6 +266,8 @@
             grid-template-columns: minmax(0, 1fr);
             align-items: start;
             min-height: calc(100vh - 178px);
+            position: relative;
+            z-index: 1;
         }
 
         .hero-grid > div {
@@ -825,8 +895,15 @@
             .home-link,
             .icon-btn,
             .track-button,
+            .hero-art-strip img,
             .social-row a {
                 transition: none;
+            }
+
+            .hero-art-strip img {
+                opacity: 0.88;
+                animation: none;
+                transform: rotate(var(--art-rotate, 0deg));
             }
         }
 
@@ -840,6 +917,11 @@
 
             .hero {
                 padding-top: 30px;
+            }
+
+            .hero-art-strip {
+                justify-content: flex-start;
+                margin-top: 22px;
             }
 
             .hero-grid,
@@ -941,6 +1023,13 @@
                     <p class="hero-copy">
                         Hi, I’m Jialin Li. Welcome to my Portfolio. In my spare time, I enjoy playing music and photography. I also enjoy nature landscape photography: I appreciate and immerse myself in the sensory impact of nature, and I hope to capture every unforgettable and stunning moment through photography.
                     </p>
+                    <div class="hero-art-strip" aria-label="Portfolio moments">
+                        <img class="hero-art-1" src="assets/img/portfolio/portfolio1.png" alt="Portfolio moment 1">
+                        <img class="hero-art-2" src="assets/img/portfolio/portfolio2.JPG" alt="Portfolio moment 2">
+                        <img class="hero-art-3" src="assets/img/portfolio/portfolio3.jpeg" alt="Portfolio moment 3">
+                        <img class="hero-art-4" src="assets/img/portfolio/portfolio4.jpeg" alt="Portfolio moment 4">
+                        <img class="hero-art-5" src="assets/img/portfolio/portfolio5.JPG" alt="Portfolio moment 5">
+                    </div>
                 </div>
             </div>
         </section>
