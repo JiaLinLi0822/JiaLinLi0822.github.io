@@ -1,2 +1,3 @@
 exclude:
+  - _portfolio_covers
   - assets/img/performance
