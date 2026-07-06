@@ -179,7 +179,7 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: minmax(0, 680px);
+            grid-template-columns: minmax(0, 1fr);
             align-items: end;
             min-height: calc(100vh - 220px);
         }
@@ -210,16 +210,24 @@
             letter-spacing: 0;
         }
 
+        #portfolio-title {
+            max-width: none;
+            text-align: center;
+        }
+
         .hero-copy {
-            max-width: 560px;
+            width: 100%;
+            max-width: none;
             margin-top: 22px;
             color: var(--muted);
             font-family: "Lora", serif;
             font-size: clamp(0.98rem, 1.4vw, 1.12rem);
             line-height: 1.68;
+            text-align: justify;
         }
 
         .motto {
+            max-width: 560px;
             margin-top: 22px;
             padding: 18px;
             border: 1px solid var(--glass-border);
